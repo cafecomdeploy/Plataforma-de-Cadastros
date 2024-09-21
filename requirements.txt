@@ -1,0 +1,11 @@
+fastapi
+sqlalchemy
+uvicorn
+pydantic
+email_validator
+alembic
+passlib
+python-jose
+bcrypt
+alembic
+python-decouple
