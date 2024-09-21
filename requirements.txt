@@ -9,3 +9,5 @@ python-jose
 bcrypt
 alembic
 python-decouple
+logging
+rich

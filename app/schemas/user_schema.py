@@ -14,6 +14,9 @@ class UserBase(BaseModel):
     data_nascimento: date
 
 class UserCreate(UserBase):
+    nome: str
+    email: EmailStr
+    data_nascimento: date
     senha: constr(min_length=8)  # validação de senha
 
 class UserResponse(UserBase):
