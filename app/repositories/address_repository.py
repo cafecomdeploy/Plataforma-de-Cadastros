@@ -11,6 +11,9 @@ class AddressRepository:
     
     def get_by_id_addres(self, address_id: int) -> Optional[Address]:
         return self.db.query(Address).filter(Address.id == address_id).first()
+    
+    def get_address_by_user(self, usuario_id: int) -> Optional[List[Address]]:
+        return self.db.query(Address).filter(Address.usuario_id == usuario_id).all()
 
     def create_address(self, address_data) -> Address:
         address = Address(**address_data)

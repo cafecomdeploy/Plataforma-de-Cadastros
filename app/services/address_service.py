@@ -14,6 +14,9 @@ class AddressService:
     def get_address(self, address_id: int) -> Optional[Address]:
         return self.repository.get_by_id_addres(address_id)
     
+    def get_address_by_user(self, usuario_id: int) -> Optional[List[Address]]:
+        return self.repository.get_address_by_user(usuario_id)
+    
     def create_address(self, address_create: AddressCreate) -> Address:
         return self.repository.create_address(address_create.dict())
 

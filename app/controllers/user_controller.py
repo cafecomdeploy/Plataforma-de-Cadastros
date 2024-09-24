@@ -14,7 +14,7 @@ async def register(user_data: UserCreate, db: Session = Depends(get_db)):
     user = user_service.create_user(user_data)
     return user
 
-@router.post("/login/", status_code=status.HTTP_201_CREATED, description='Realizandoi login')
+@router.post("/login/", status_code=status.HTTP_201_CREATED, description='Realizando login')
 async def login(login_data: LoginSchema, db: Session = Depends(get_db)):
     user_service = UserService(db)
     user = user_service.authenticate_user(login_data.email, login_data.senha)
@@ -22,4 +22,4 @@ async def login(login_data: LoginSchema, db: Session = Depends(get_db)):
     if not user:
         raise HTTPException(status_code=400, detail="Invalid credentials")
     token = create_access_token(data={"sub": user.email})
-    return {"access_token": token, "token_type": "bearer"}
+    return {"access_token": token, "token_type": "bearer",  "user_id": user.id }
