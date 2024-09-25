@@ -91,3 +91,15 @@ AttributeError: module 'bcrypt' has no attribute '__about__'
 2024-09-24 18:10:21,432 - rich_logger - INFO - Realizando Login:lorena.cunha@hotmail.com
 2024-09-24 18:10:38,148 - rich_logger - INFO - Realizando Login:ar55iel@gmail.com
 2024-09-24 18:22:48,636 - rich_logger - INFO - Realizando Login:lorena.cunha@hotmail.com
+2024-09-25 18:01:51,667 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Windows 10\Desktop\Teste_Desenvolvedor_Py\Back\Address-Control\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-09-25 18:03:35,081 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Windows 10\Desktop\Teste_Desenvolvedor_Py\Back\Address-Control\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'

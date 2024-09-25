@@ -18,7 +18,6 @@ async def register(user_data: UserCreate, db: Session = Depends(get_db)):
 async def login(login_data: LoginSchema, db: Session = Depends(get_db)):
     user_service = UserService(db)
     user = user_service.authenticate_user(login_data.email, login_data.senha)
-    logger.info("Realizando Login:" + user.email)
     if not user:
         raise HTTPException(status_code=400, detail="Invalid credentials")
     token = create_access_token(data={"sub": user.email})

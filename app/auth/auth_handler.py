@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from fastapi import HTTPException, Depends
 from fastapi.security import OAuth2PasswordBearer
 
-SECRET_KEY = "supersecret"
+SECRET_KEY = "EFICIENCIAOPERACIONAL"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
