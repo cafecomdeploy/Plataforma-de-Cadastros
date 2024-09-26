@@ -32,7 +32,8 @@ class AddressRepository:
     
     def delete_address(self, address_id: int) -> bool:
         address = self.db.query(Address).filter(Address.id == address_id).first()
-        if address:
-            self.db.delete(address)
-            self.db.commit()
-            return True
+        if not address:
+            return False
+        self.db.delete(address)
+        self.db.commit()
+        return True

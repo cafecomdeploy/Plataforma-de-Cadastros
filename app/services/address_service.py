@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 
 class AddressService:
     def __init__(self, db: Session):
+        self.db = db
         self.repository = AddressRepository(db)
 
     def get_all_addresses(self) -> List[Address]:

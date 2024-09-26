@@ -11,3 +11,5 @@ alembic
 python-decouple
 logging
 rich
+pytest
+pytest-mock
