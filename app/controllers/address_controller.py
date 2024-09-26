@@ -37,10 +37,10 @@ async def register_address(address_data: AddressCreate, db: Session = Depends(ge
     service = AddressService(db)
     return service.create_address(address_data)
 
-@router.put("/address/",  description= "Editando Endereço")
-async def update_address(address_data: AddressUpdate, db: Session = Depends(get_db),  current_user: dict = Depends(get_current_user) ):
+@router.put("/address/{address_id}", description="Editando Endereço")
+async def update_address(address_id: int, address_data: AddressUpdate, db: Session = Depends(get_db), current_user: dict = Depends(get_current_user)):
     service = AddressService(db)
-    updated_address = service.update_user_address(db, address_id=1, address_data=address_data.dict()) 
+    updated_address = service.update_user_address(address_id=address_id, address_data=address_data.dict()) 
     return updated_address
 
 @router.delete("/addresses/{address_id}", response_model=dict)

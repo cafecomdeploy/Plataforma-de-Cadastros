@@ -7,14 +7,10 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(default_response_class=JSONResponse)
 
-# Configurando o CORS
-origins = [
-    "http://localhost:3000",  # O frontend React
-]
-
+# Configurando o middleware CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # Permite as origens especificadas
+    allow_origins=["http://localhost:3000"],  # ou ["*"] para aceitar qualquer origem
     allow_credentials=True,
     allow_methods=["*"],  # Permite todos os métodos (GET, POST, etc.)
     allow_headers=["*"],  # Permite todos os cabeçalhos

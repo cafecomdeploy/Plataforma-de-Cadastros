@@ -21,8 +21,9 @@ class AddressService:
     def create_address(self, address_create: AddressCreate) -> Address:
         return self.repository.create_address(address_create.dict())
 
-    def update_user_address(self, address_id: int, address_data: dict):
-        return self.repository.update_address(self, address_id, address_data)
+    def update_user_address(self, address_id: int, address_data: dict): 
+        return self.repository.update_address(address_id, address_data)
+
     
     def delete_address(self, address_id: int) -> bool:
         return self.repository.delete_address(address_id)
