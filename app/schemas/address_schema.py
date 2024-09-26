@@ -1,6 +1,7 @@
 from pydantic import BaseModel, constr
 
 class AddressBase(BaseModel):
+    id: int
     logradouro: str
     cidade: str
     estado: str
@@ -13,6 +14,5 @@ class AddressUpdate(BaseModel):
     cidade: str
     estado: str
     cep: constr(min_length=8, max_length=8)  # validação de CEP
-
     class Config:
         from_attributes = True
